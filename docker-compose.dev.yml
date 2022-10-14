@@ -4,6 +4,7 @@ services:
     build:
       context: .
       target: development
+      #dockerfile: Dockerfile
     ports:
       - 8000:8000
       - 8080:8080
@@ -11,7 +12,7 @@ services:
       - SERVER_PORT=8080
       - MYSQL_URL=jdbc:mysql://mysqlserver/petclinic
     volumes:
-      - ./:/root/app
+      - ./:/app
     depends_on:
       - mysqlserver
 
@@ -29,23 +30,23 @@ services:
       - mysql_data:/var/lib/mysql
       - mysql_config:/etc/mysql/conf.d
 
-  backend:
-    #container_name: backend2-container
-    build: ./backend2/
-    tty: true
-    stdin_open: true
-    restart: always
-    #networks:
-    #        - spring-mysql
-    volumes:
-      - ./:/workdir
-    secrets:
-      - db-password
-    environment:
-      MYSQL_HOST: db
-    # depends_on:
-    #   db:
-    #     condition: service_healthy
+  # backend:
+  #   container_name: backend2-container
+  #   build: ./backend2/
+  #   tty: true
+  #   stdin_open: true
+  #   restart: always
+  #   networks:
+  #          - spring-mysql
+  #   volumes:
+  #     - ./:/workdir
+  #   secrets:
+  #     - db-password
+  #   environment:
+  #     MYSQL_HOST: db
+  # #   depends_on:
+  # #     db:
+  # #       condition: service_healthy
 
 volumes:
   mysql_data:
