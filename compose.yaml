@@ -1,0 +1,75 @@
+version: "3.9"
+
+services:
+#         service1:
+#                 #container_name: backend-container
+#                 build: ./backend/
+#                 tty: true
+#                 stdin_open: true
+#                 volumes:
+#                         - my-app:/workspace
+
+
+        service2:
+                #container_name: backend2-container
+                build: ./backend2/
+                tty: true
+                stdin_open: true
+                restart: always
+                #networks:
+                #        - spring-mysql
+                volumes:
+                        - ./:/workdir
+                secrets:
+                        - db-password
+                environment:
+                        MYSQL_HOST: db                
+                depends_on:
+                        db:
+                          condition: service_healthy
+
+        db:
+                #container_name: db
+                # We use a mariadb image which supports both amd64 & arm64 architecture
+                image: mariadb:latest
+                # If you really want to use MySQL, uncomment the following line
+                #image: mysql:8.0.19
+                environment:
+                        #- MYSQL_DATABASE=example
+                        #- MYSQL_ROOT_PASSWORD_FILE=/run/secrets/db-password
+                        - MARIADB_DATABASE=example
+                        - MARIADB_ROOT_PASSWORD=db-57xsl
+                        - MARIADB_USER=dev
+                        - MARIADB_PASSWORD=wanson
+                        
+                restart: always
+                healthcheck:
+                        test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "--silent"]
+                        interval: 3s
+                        retries: 5
+                        start_period: 30s
+                secrets:
+                        - db-password
+                volumes:
+                        - db-data:/var/lib/mysql
+                #networks:
+                #        - spring-mysql
+                #ports:
+                #        - 3306
+                
+
+volumes:
+        my-app:
+                external: true
+
+        db-data: {}
+
+secrets:
+  db-password:
+    file: db/password.txt
+#networks:
+  #react-spring: {}
+#  spring-mysql: {}
+networks:
+  default:
+    name: spring-mysql-1
