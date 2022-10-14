@@ -6,7 +6,7 @@ WORKDIR /root/app
 VOLUME /tmp
 COPY .mvn/ .mvn
 COPY mvnw pom.xml start.sh ./
-#RUN ./mvnw dependency:resolve
+RUN ./mvnw dependency:resolve
 COPY src ./src
 RUN chmod +x start.sh
 RUN apt-get update && apt-get install dos2unix && apt-get install maven -y
