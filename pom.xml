@@ -4,13 +4,19 @@
   <groupId>org.springframework.samples</groupId>
   <artifactId>spring-petclinic</artifactId>
   <version>2.7.3</version>
+  <packaging>pom</packaging>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
     <version>2.7.3</version>
   </parent>
-  <name>petclinic</name>
+  
+  <name>parent</name>
+  <modules>
+    <module>pet-clinic</module>
+    <module>backend2</module>
+  </modules>
 
   <properties>
 
@@ -148,8 +154,8 @@
             <id>nohttp-checkstyle-validation</id>
             <phase>validate</phase>
             <configuration>
-              <configLocation>src/checkstyle/nohttp-checkstyle.xml</configLocation>
-              <suppressionsLocation>src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation>
+              <configLocation>pet-clinic/src/checkstyle/nohttp-checkstyle.xml</configLocation>
+              <suppressionsLocation>pet-clinic/src/checkstyle/nohttp-checkstyle-suppressions.xml</suppressionsLocation>
               <encoding>UTF-8</encoding>
               <sourceDirectories>${basedir}</sourceDirectories>
               <includes>**/*</includes>

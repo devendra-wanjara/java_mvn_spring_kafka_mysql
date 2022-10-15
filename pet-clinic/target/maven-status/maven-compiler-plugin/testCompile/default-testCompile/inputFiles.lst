@@ -1,0 +1,11 @@
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/owner/OwnerControllerTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/system/CrashControllerTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/vet/VetTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/service/EntityUtils.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/PetClinicIntegrationTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/owner/VisitControllerTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/service/ClinicServiceTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/model/ValidatorTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/owner/PetTypeFormatterTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/vet/VetControllerTests.java
+/workspaces/java_mvn_spring_kafka_mysql/pet-clinic/src/test/java/org/springframework/samples/petclinic/owner/PetControllerTests.java

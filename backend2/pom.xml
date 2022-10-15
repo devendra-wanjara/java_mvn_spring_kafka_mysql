@@ -7,15 +7,20 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>New App</name>
-    <description>My new SpringBoot app</description>
+    <name>backend2</name>
+    <description>Backend 2</description>
 
     <parent>
+        <groupId>org.springframework.samples</groupId>
+        <artifactId>spring-petclinic</artifactId>
+        <version>2.7.3</version>
+    </parent>
+    <!-- <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.4</version>
         <relativePath />
-    </parent>
+    </parent> -->
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
