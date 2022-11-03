@@ -15,3 +15,6 @@ build/*
 _site/
 *.css
 !petclinic.css
+*.class
+/target/*.class
+backend2/target/classes/*.class
